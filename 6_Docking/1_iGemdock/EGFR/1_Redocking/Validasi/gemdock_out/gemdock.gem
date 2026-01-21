@@ -1,0 +1,23 @@
+#########################################
+# GEMDOCK CONFIGURATION SETTINGS
+# Format:   key = value
+# Comment:  leading with #
+#########################################
+                                         
+Cavity          = C:/Users/KIMED 1/Documents/Junaidin/iGEMDOCKv2.1/output/extracted_cav/cav1m17_AQ4.pdb
+Ligand          = C:/Users/KIMED 1/Documents/Junaidin/Docking/EGFR/valid/gemdock_out/docking.lst
+OutputPath      = C:/Users/KIMED 1/Documents/Junaidin/Docking/EGFR/valid/
+NO_POPSIZE      = 150
+FIT_TYPE        = 6
+FIT_CHARGE      = 1
+FIT_HYDRO       = 1
+FIT_SB          = 1
+ADASearchLen    = 2
+DECSearchLen    = 2
+UnRotSBNum      = 0
+MAXGEN          = 70
+RUNTIMES        = 1
+OPER_CAU        = 1
+OPER_DE         = 1
+OPER_GAU        = 0
+PBSJobNumber    = 0

@@ -1,0 +1,7 @@
+REMARK
+REMARK Protein : cav4mxo_DB8          Res. Num :   51  Receptor Atom Num :  404 
+REMARK Drug    : 66                   Atom Num :    0  Single Bond Num   :    0 
+REMARK FitnessValue = HB&van der Waals + Elect + IntraEnergy
+REMARK   172.505739 =   172.590402 +     0.000000 +    -0.084663
+REMARK
+DHBOND P 404 ASP 1170 O B <-> D9016 N D    -1.595931

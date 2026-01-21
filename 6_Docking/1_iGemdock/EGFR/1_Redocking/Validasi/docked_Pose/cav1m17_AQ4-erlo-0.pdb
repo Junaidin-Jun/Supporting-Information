@@ -1,0 +1,67 @@
+REMARK
+REMARK Protein : cav1m17_AQ4          Res. Num :   51  Receptor Atom Num :  403 
+REMARK Drug    : erlo                 Atom Num :   29  Single Bond Num   :    0 
+REMARK FitnessValue = HB&van der Waals + Elect + IntraEnergy
+REMARK   -96.193782 =   -96.193782 +     0.000000 +     0.000000
+REMARK
+HETATM    1  C1  PRE Z 999      30.817  -2.103  54.340  1.00 82.82           C  
+HETATM    2  C2  PRE Z 999      30.108  -1.150  54.158  1.00 79.21           C  
+HETATM    3  C3  PRE Z 999      29.257  -0.050  53.954  1.00 77.10           C  
+HETATM    4  C4  PRE Z 999      27.880  -0.277  53.849  1.00 78.64           C  
+HETATM    5  C5  PRE Z 999      27.000   0.798  53.646  1.00 75.72           C  
+HETATM    6  N1  PRE Z 999      25.570   0.524  53.542  1.00 63.33           N  
+HETATM    7  C6  PRE Z 999      24.656  -0.354  54.256  1.00 56.92           C  
+HETATM    8  C7  PRE Z 999      23.305  -0.483  53.851  1.00 52.23           C  
+HETATM    9  C8  PRE Z 999      22.826   0.213  52.736  1.00 48.18           C  
+HETATM   10  C9  PRE Z 999      21.490   0.076  52.340  1.00 52.11           C  
+HETATM   11  O1  PRE Z 999      20.997   0.825  51.147  1.00 82.48           O  
+HETATM   12  C10 PRE Z 999      22.018   0.888  50.117  1.00 83.98           C  
+HETATM   13  C11 PRE Z 999      21.745   2.102  49.221  1.00 91.80           C  
+HETATM   14  O2  PRE Z 999      20.544   1.875  48.447  1.00 96.57           O  
+HETATM   15  C12 PRE Z 999      19.218   2.065  49.215  1.00 88.53           C  
+HETATM   16  C13 PRE Z 999      20.612  -0.783  53.066  1.00 52.73           C  
+HETATM   17  O3  PRE Z 999      19.160  -0.964  52.669  1.00 83.95           O  
+HETATM   18  C14 PRE Z 999      18.578   0.277  52.156  1.00 98.66           C  
+HETATM   19  C15 PRE Z 999      17.066   0.145  51.924  1.00102.19           C  
+HETATM   20  O4  PRE Z 999      16.399  -0.084  53.179  1.00 79.31           O  
+HETATM   21  C16 PRE Z 999      15.146  -0.962  53.063  1.00 92.17           C  
+HETATM   22  C17 PRE Z 999      21.099  -1.477  54.174  1.00 59.83           C  
+HETATM   23  C18 PRE Z 999      22.431  -1.345  54.564  1.00 53.51           C  
+HETATM   24  N2  PRE Z 999      22.920  -2.070  55.711  1.00 50.53           N  
+HETATM   25  C19 PRE Z 999      24.269  -1.929  56.103  1.00 65.28           C  
+HETATM   26  N3  PRE Z 999      25.131  -1.070  55.378  1.00 44.57           N  
+HETATM   27  C20 PRE Z 999      27.505   2.116  53.548  1.00 77.38           C  
+HETATM   28  C21 PRE Z 999      28.891   2.347  53.653  1.00 70.00           C  
+HETATM   29  C22 PRE Z 999      29.772   1.264  53.856  1.00 71.32           C  
+CONECT    1    2   30
+CONECT    2    1    3
+CONECT    3    2    4   29
+CONECT    4    3    5   31
+CONECT    5    4    6   27
+CONECT    6    5    7   32
+CONECT    7    6    8   26
+CONECT    8    7    9   23
+CONECT    9    8   10   33
+CONECT   10    9   11   16
+CONECT   11   10   12
+CONECT   12   11   13   34   35
+CONECT   13   12   14   36   37
+CONECT   14   13   15
+CONECT   15   14   38   39   40
+CONECT   16   10   17   22
+CONECT   17   16   18
+CONECT   18   17   19   41   42
+CONECT   19   18   20   43   44
+CONECT   20   19   21
+CONECT   21   20   45   46   47
+CONECT   22   16   23   48
+CONECT   23    8   22   24
+CONECT   24   23   25
+CONECT   25   24   26   49
+CONECT   26    7   25
+CONECT   27    5   28   50
+CONECT   28   27   29   51
+CONECT   29    3   28   52
+DHBOND P 766 THR  734 O B <-> D  26 N A    -3.500000
+DHBOND P 767 GLN  739 O A <-> D  24 N D    -3.500000
+DHBOND P 772 GLY  779 N D <-> D  20 O A    -3.500000

@@ -1,0 +1,10 @@
+&general
+startframe=24001, endframe=25000, interval=5, keep_files=2,
+verbose=2,
+/
+&pb
+istrng=0.150, inp=1,
+/
+&gb
+igb=5, saltcon=0.150,
+/

@@ -1,0 +1,3 @@
+#C:/Users/KIMED 1/Documents/Junaidin/iGEMDOCKv2.1/output/extracted_cav/cav1m17_AQ4.pdb with C:/Users/KIMED 1/Documents/Junaidin/Docking/EGFR/valid/gemdock_out/docking.lst
+#Ligand	TotalEnergy	VDW	HBond	Elec	AverConPair	
+cav1m17_AQ4-erlo-0.pdb	-96.1967	-85.7002	-10.4965	0	22.5172

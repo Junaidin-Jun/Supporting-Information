@@ -1,0 +1,31 @@
+[iGemdockGUI]
+Version=2.8
+Author=Y.J.Chen
+Loaded_Protein=D:/Master/Software Komputasi Drt M/iGEMDOCKv2.1/output/extracted_cav/cav1hwi_115.pdb
+Binding_Site=D:/Master/Software Komputasi Drt M/iGEMDOCKv2.1/output/extracted_cav/cav1hwi_115.pdb
+Compounds=D:/Penelitian APTFM/VS/Validasi Igemdock/Fluva.mol2
+Docking_Output_Path=C:/Program Files/iGEMDOCKv2.1/output/
+Population_Size=150
+Generation_Number=30
+Number_of_GA_Runs=1
+Hydrophobic=1
+Electrostatic=1
+Success_Docked_Poses=D:/Penelitian APTFM/VS/Validasi Igemdock/best_Pose/cav1hwi_115-Fluva-0.pdb
+
+[iGemdockCLI]
+Cavity=D:/Master/Software Komputasi Drt M/iGEMDOCKv2.1/output/extracted_cav/cav1hwi_115.pdb
+Ligand=C:/Program Files/iGEMDOCKv2.1/output/gemdock_out/docking.lst
+OutputPath=C:/Program Files/iGEMDOCKv2.1/output/
+NO_POPSIZE=150
+FIT_TYPE=6
+FIT_CHARGE=1
+FIT_HYDRO=1
+FIT_SB=2
+ADASearchLen=2
+DECSearchLen=2
+UnRotSBNum=0
+MAXGEN=30
+RUNTIMES=1
+OPER_CAU=1
+OPER_DE=0
+OPER_GAU=0
