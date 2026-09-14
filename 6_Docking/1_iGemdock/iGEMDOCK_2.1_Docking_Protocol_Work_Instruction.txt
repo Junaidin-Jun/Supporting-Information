@@ -1,0 +1,249 @@
+iGEMDOCK 2.1 DOCKING PROTOCOL
+Standardized Working Instructions for Docking, Redocking Validation, and Reproducibility
+Prepared for manuscript
+
+======================================================================
+1. PURPOSE
+======================================================================
+
+This document describes the standardized docking procedure used with
+iGEMDOCK 2.1 for EGFR and Src. The procedure is intended to provide a
+clear, reproducible record of the binding-site definition, docking
+parameters, ligand preparation, receptor treatment, and redocking
+validation.
+
+The iGEMDOCK 2.1 protocol was used as the primary virtual-screening and
+ranking procedure. AutoDock4.2 was subsequently used only for selected
+compounds and was not used as an independent library-wide screening
+platform.
+
+======================================================================
+2. SOFTWARE AND TARGET STRUCTURES
+======================================================================
+
+Software:
+- iGEMDOCK version 2.1
+
+Protein targets:
+- EGFR: PDB ID 1M17
+- Src:  PDB ID 4MXO
+
+Co-crystallized ligands used for redocking validation:
+- EGFR/1M17: erlotinib
+- Src/4MXO: bosutinib
+
+======================================================================
+3. PROTEIN STRUCTURE PREPARATION
+======================================================================
+
+3.1 Obtain the experimentally determined crystal structures from the
+    Protein Data Bank.
+
+3.2 Inspect the receptor structures and identify the co-crystallized
+    ligand associated with the kinase binding site.
+
+3.3 For virtual screening of external compounds:
+    - Remove the co-crystallized ligand from the receptor binding site.
+    - Remove crystallographic water molecules before docking.
+    - No additional cofactors or structurally relevant ions were retained
+      because none required retention in the selected receptor structures.
+
+3.4 For redocking validation:
+    - Use the corresponding prepared receptor structure.
+    - Retain the original co-crystallized ligand as the reference ligand
+      for defining the binding site and for subsequent comparison of the
+      predicted and crystallographic poses.
+
+3.5 Protein flexibility:
+    - Treat the receptor as rigid during iGEMDOCK 2.1 docking.
+    - No receptor-side conformational sampling or induced-fit procedure
+      is applied.
+
+======================================================================
+4. PREPARE BINDING SITE IN iGEMDOCK 2.1
+======================================================================
+
+Open iGEMDOCK 2.1 and select:
+
+    Protein Ligand Docking/Screening
+        -> Prepare Binding Site
+
+4.1 Select the prepared protein structure.
+
+4.2 In the "Define binding site type" section, select:
+
+    [X] By bounded ligand
+
+This option defines the binding region from the coordinates of the
+selected co-crystallized ligand.
+
+4.3 Select the appropriate reference ligand from:
+
+    Choose binding site center (Ligand name)
+
+For EGFR:
+    Reference ligand = erlotinib from PDB 1M17
+
+For Src:
+    Reference ligand = bosutinib from PDB 4MXO
+
+4.4 Set:
+
+    Binding site radius = 8.0 Å
+
+4.5 For redocking validation, activate:
+
+    [X] Retain reference ligand
+
+This allows the co-crystallized ligand to be retained as the reference
+for validation of the experimentally observed binding orientation.
+
+4.6 Click "Display" if required to visually inspect the defined binding
+    region.
+
+4.7 Confirm that the obtained binding site corresponds to the known
+    kinase ligand-binding region.
+
+4.8 Save the prepared binding-site file.
+
+Example iGEMDOCK output:
+    extracted_cav/cav4mxo_DB8.pdb
+
+The exact output filename may vary according to the target and the
+reference ligand.
+
+======================================================================
+5. PREPARE COMPOUNDS
+======================================================================
+
+In the main iGEMDOCK 2.1 window:
+
+    Protein Ligand Docking/Screening
+        -> Prepare Compounds
+
+5.1 Load the compounds to be docked.
+
+5.2 For the virtual-screening workflow, prepare the filtered compound
+    library obtained after the preceding pharmacophore and PAINS
+    filtering steps.
+
+5.3 For redocking validation, prepare the corresponding
+    co-crystallized ligand separately.
+
+5.4 iGEMDOCK's built-in compound-preparation procedure is used for
+    ligand preparation. Hydrogen atoms are automatically accounted for
+    during the preparation/docking procedure.
+
+======================================================================
+6. iGEMDOCK 2.1 DOCKING SETTINGS
+======================================================================
+
+In the main iGEMDOCK 2.1 interface, use:
+
+    Default setting = Standard Docking
+
+Set the following parameters:
+
+    Population size       = 200
+    Generations           = 70
+    Number of solutions   = 2
+
+These settings correspond to the Standard Docking configuration used in
+the study.
+
+6.1 Population size
+
+    Set Population size to:
+        200
+
+6.2 Number of generations
+
+    Set Generations to:
+        70
+
+6.3 Number of retained solutions
+
+    Set Number of solutions to:
+        2
+
+IMPORTANT:
+The "Number of solutions = 2" setting represents the number of final
+docking solutions reported/retained by iGEMDOCK. It does NOT represent
+two independent docking runs.
+
+6.4 Scoring function
+
+Use the standard iGEMDOCK scoring procedure unless a documented,
+study-specific scoring configuration is provided in the corresponding
+configuration file.
+
+6.5 Binding-site definition
+
+Use the ligand-defined binding site prepared with:
+
+    Binding-site radius = 8.0 Å
+
+======================================================================
+7. START THE DOCKING CALCULATION
+======================================================================
+
+7.1 Set the output path using:
+
+    Set Output Path
+
+7.2 Verify that:
+    - the correct protein/binding-site file is loaded;
+    - the correct ligand set is loaded;
+    - the binding-site definition is correct;
+    - Standard Docking is selected;
+    - Population size = 200;
+    - Generations = 70;
+    - Number of solutions = 2.
+
+7.3 Start the calculation using:
+
+    Start Docking
+
+======================================================================
+8. REDOCKING VALIDATION
+======================================================================
+
+Redocking validation is performed independently for EGFR and Src.
+
+8.1 EGFR validation
+
+    Protein       = EGFR, PDB 1M17
+    Reference     = co-crystallized erlotinib
+    Binding site  = defined by bounded ligand
+    Radius        = 8.0 Å
+    Docking mode  = Standard Docking
+    Population    = 200
+    Generations   = 70
+    Solutions     = 2
+
+8.2 Src validation
+
+    Protein       = Src, PDB 4MXO
+    Reference     = co-crystallized bosutinib
+    Binding site  = defined by bounded ligand
+    Radius        = 8.0 Å
+    Docking mode  = Standard Docking
+    Population    = 200
+    Generations   = 70
+    Solutions     = 2
+
+8.3 Observed iGEMDOCK 2.1 redocking RMSDs:
+
+    EGFR / erlotinib   = 1.39 Å
+    Src  / bosutinib   = 1.98 Å
+
+
+IMPORTANT LIMITATION:
+Only one co-crystallized ligand was redocked for each target. Therefore,
+the redocking assessment validates pose reproduction for the selected
+EGFR and Src crystal structures but does not constitute an exhaustive
+assessment across multiple ligand chemotypes.
+
+======================================================================
+END OF WORK INSTRUCTION
+======================================================================
