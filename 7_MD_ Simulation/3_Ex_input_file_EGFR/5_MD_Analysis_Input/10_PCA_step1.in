@@ -1,0 +1,31 @@
+# =========================================================
+# PCA_step1.in
+# PCA: COVARIANCE MATRIX + EIGENVALUES
+# =========================================================
+
+parm solvated.prmtop
+
+trajin last10ns.nc
+
+# Remove periodic imaging
+autoimage
+
+# Align trajectory exactly as used for extraction
+rms first :2-278@CA,C,N
+
+# Calculate covariance matrix
+matrix covar name covmat :2-278@CA,C,N
+
+run
+
+# Diagonalize covariance matrix
+diagmatrix covmat \
+    out evecs.dat \
+    name Evecs
+
+run
+
+# Calculate eigenvalue fractions / PCA variance
+runanalysis modes eigenval \
+    name Evecs \
+    out PCA_variance.dat

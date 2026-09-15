@@ -1,0 +1,26 @@
+# =========================================================
+# PCA_step2.in
+# PROJECT TRAJECTORY ON PC1 AND PC2
+# =========================================================
+
+parm solvated.prmtop
+
+trajin last10ns.nc
+
+# Remove periodic imaging
+autoimage
+
+# Align trajectory exactly as PCA calculation
+rms first :2-278@CA,C,N
+
+# Read eigenvectors
+readdata evecs.dat name Evecs
+
+# Project trajectory onto PC1 and PC2
+projection PCproj \
+    evecs Evecs \
+    out pca_proj.dat \
+    beg 1 end 2 \
+    :2-278@CA,C,N
+
+run

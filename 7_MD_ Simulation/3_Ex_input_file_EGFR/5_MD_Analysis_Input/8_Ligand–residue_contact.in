@@ -1,0 +1,11 @@
+trajin run.crd
+
+nativecontacts name LIG_PROT \
+    :1&!@H= :2-278&!@H= \
+    distance 4.0 \
+    byresidue \
+    resout ligand_protein_residue.dat \
+    out ligand_protein_contacts.dat \
+    writecontacts ligand_protein_atom_contacts.dat
+
+run

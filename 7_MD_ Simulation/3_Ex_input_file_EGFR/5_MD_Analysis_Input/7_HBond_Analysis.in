@@ -1,0 +1,20 @@
+trajin run.crd
+
+# Hydrogen-bond occupancy between ligand and protein
+hbond HB_LIG_PROT \
+    donormask :1&@N*,O*,S* \
+    acceptormask :2-278&@N*,O*,S* \
+    distance 3.5 \
+    angle 120.0 \
+    avgout hbond_occupancy_ligand_donor.dat \
+    out hbond_ligand_donor.dat
+
+hbond HB_PROT_LIG \
+    donormask :2-278&@N*,O*,S* \
+    acceptormask :1&@N*,O*,S* \
+    distance 3.5 \
+    angle 120.0 \
+    avgout hbond_occupancy_protein_donor.dat \
+    out hbond_protein_donor.dat
+
+run

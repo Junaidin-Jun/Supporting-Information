@@ -1,0 +1,18 @@
+# =========================================================
+# extract_last10ns.in
+# EXTRACT LAST 10 ns TRAJECTORY FOR PCA
+# =========================================================
+
+parm solvated.prmtop
+
+trajin run.crd 24001 25000
+
+autoimage
+
+# Align protein using C-alpha atoms
+rms first :2-278CA,C,N
+
+# Save processed trajectory
+trajout last10ns.nc netcdf
+
+run

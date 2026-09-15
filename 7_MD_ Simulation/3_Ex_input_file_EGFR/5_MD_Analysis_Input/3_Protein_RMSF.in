@@ -1,0 +1,5 @@
+trajin run.crd
+
+rms firstmass :2-278@CA,C,N
+atomicfluct out rmsf_250.xvg :2-278@CA byres
+run

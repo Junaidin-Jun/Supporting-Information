@@ -1,0 +1,4 @@
+trajin run.crd
+
+rms firstmass out rmsd.xvg :2-278@CA,C,N
+run
