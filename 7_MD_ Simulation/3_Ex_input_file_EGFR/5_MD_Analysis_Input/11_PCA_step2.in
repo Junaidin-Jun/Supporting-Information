@@ -11,7 +11,7 @@ trajin last10ns.nc
 autoimage
 
 # Align trajectory exactly as PCA calculation
-rms first :2-278@CA,C,N
+rms first :2-325@CA,C,N
 
 # Read eigenvectors
 readdata evecs.dat name Evecs
@@ -21,6 +21,6 @@ projection PCproj \
     evecs Evecs \
     out pca_proj.dat \
     beg 1 end 2 \
-    :2-278@CA,C,N
+    :2-325@CA,C,N
 
 run

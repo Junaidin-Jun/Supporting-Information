@@ -1,6 +1,6 @@
 trajin run.crd
 
 # Radius of gyration of protein
-radgyr :2-278 out radius_gyration.xvg
+radgyr :2-325 out radius_gyration.xvg
 
 run

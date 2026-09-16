@@ -1,7 +1,7 @@
 trajin run.crd
 
 # Align trajectory using protein backbone
-rms first :2-278@CA,C,N
+rms first :2-325@CA,C,N
 
 # Calculate ligand RMSF
 atomicfluct :1&!@H= byatom out ligand_rmsf.xvg

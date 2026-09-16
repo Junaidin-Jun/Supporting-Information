@@ -10,7 +10,7 @@ trajin run.crd 24001 25000
 autoimage
 
 # Align protein using C-alpha atoms
-rms first :2-278CA,C,N
+rms first :2-325CA,C,N
 
 # Save processed trajectory
 trajout last10ns.nc netcdf

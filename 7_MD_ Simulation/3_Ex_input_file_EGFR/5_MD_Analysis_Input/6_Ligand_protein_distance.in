@@ -1,6 +1,6 @@
 trajin run.crd
 
 # Distance between ligand and protein centers of mass
-distance LIG_PROT :1 :2-278 out ligand_protein_distance.xvg
+distance LIG_PROT :1 :2-325 out ligand_protein_distance.xvg
 
 run

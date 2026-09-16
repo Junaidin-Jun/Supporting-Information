@@ -11,10 +11,10 @@ trajin last10ns.nc
 autoimage
 
 # Align trajectory exactly as used for extraction
-rms first :2-278@CA,C,N
+rms first :2-325@CA,C,N
 
 # Calculate covariance matrix
-matrix covar name covmat :2-278@CA,C,N
+matrix covar name covmat :2-325@CA,C,N
 
 run
 

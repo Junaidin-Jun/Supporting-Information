@@ -1,7 +1,7 @@
 trajin run.crd
 
 nativecontacts name LIG_PROT \
-    :1&!@H= :2-278&!@H= \
+    :1&!@H= :2-325&!@H= \
     distance 4.0 \
     byresidue \
     resout ligand_protein_residue.dat \
