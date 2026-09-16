@@ -10,10 +10,6 @@ This document describes the standardized AutoDockTools (ADT) and
 AutoDock4.2 docking procedure used for EGFR and Src.
 
 The procedure is intended to provide a clear and reproducible record of:
-- receptor and ligand preparation;
-- proton/hydrogen treatment;
-- atomic charge assignment;
-- ligand torsional flexibility;
 - grid dimensions and center coordinates;
 - AutoGrid settings;
 - AutoDock4.2 Lamarckian Genetic Algorithm (LGA) search parameters;
@@ -31,9 +27,9 @@ library-wide active/decoy screening platform.
 ======================================================================
 
 Software:
-- AutoDockTools (ADT)
+- AutoDockTools1.5.6 (ADT)
 - AutoDock4.2
-- AutoGrid4
+- AutoGrid4.2
 
 Protein targets:
 - EGFR: PDB ID 1M17
