@@ -1,0 +1,249 @@
+AUTODOCKTOOLS (ADT) + AUTODOCK4.2 DOCKING PROTOCOL
+Standardized Working Instructions for Docking, Redocking Validation, and Reproducibility
+Prepared for manuscript
+
+======================================================================
+1. PURPOSE
+======================================================================
+
+This document describes the standardized AutoDockTools (ADT) and
+AutoDock4.2 docking procedure used for EGFR and Src.
+
+The procedure is intended to provide a clear and reproducible record of:
+- receptor and ligand preparation;
+- proton/hydrogen treatment;
+- atomic charge assignment;
+- ligand torsional flexibility;
+- grid dimensions and center coordinates;
+- AutoGrid settings;
+- AutoDock4.2 Lamarckian Genetic Algorithm (LGA) search parameters;
+- number of docking runs;
+- clustering and pose selection; and
+- redocking validation.
+
+AutoDock4.2 was used after iGEMDOCK2.1 screening to further evaluate the
+17 compounds selected based on favorable docking scores against both
+targets. AutoDock4.2 was therefore not used as an independent
+library-wide active/decoy screening platform.
+
+======================================================================
+2. SOFTWARE AND TARGET STRUCTURES
+======================================================================
+
+Software:
+- AutoDockTools (ADT)
+- AutoDock4.2
+- AutoGrid4
+
+Protein targets:
+- EGFR: PDB ID 1M17
+- Src:  PDB ID 4MXO
+
+Co-crystallized ligands used for redocking validation:
+- EGFR/1M17: erlotinib
+- Src/4MXO: bosutinib
+
+
+======================================================================
+3. AUTOGRID4 GRID PARAMETER SETUP
+======================================================================
+
+The grid defines the three-dimensional region in which AutoDock4.2
+evaluates ligand-receptor interactions.
+
+The following target-specific parameters were used.
+
+----------------------------------------------------------------------
+3.1 EGFR — PDB 1M17
+----------------------------------------------------------------------
+
+Grid center:
+    X = 21.950 Å
+    Y = 0.318 Å
+    Z = 52.002 Å
+
+Number of grid points:
+    X = 45
+    Y = 45
+    Z = 40
+
+Grid spacing:
+    0.375 Å
+
+Grid dimensions:
+    45 × 45 × 40 points
+
+
+----------------------------------------------------------------------
+3.2 Src — PDB 4MXO
+----------------------------------------------------------------------
+
+Grid center:
+    X = 12.846 Å
+    Y = -40.993 Å
+    Z = -3.653 Å
+
+Number of grid points:
+    X = 60
+    Y = 40
+    Z = 50
+
+Grid spacing:
+    0.375 Å
+
+Grid dimensions:
+    60 × 40 × 50 points
+
+
+IMPORTANT:
+The grid center coordinates and dimensions are target-specific and
+must not be interchanged between EGFR and Src.
+
+The grid should encompass the experimentally observed kinase ligand
+binding region and provide sufficient space for ligand translational,
+rotational, and conformational sampling.
+
+======================================================================
+4. AUTODOCK4.2 DOCKING PARAMETER SETUP
+======================================================================
+
+AutoDock4.2 uses the Lamarckian Genetic Algorithm (LGA) combined with
+local optimization.
+
+The following parameters were used:
+
+    Search algorithm:
+        Lamarckian Genetic Algorithm (LGA)
+
+    Population size:
+        150 individuals
+
+    Maximum energy evaluations:
+        2,500,000
+
+    Maximum generations:
+        27,000
+
+    Number of independent docking runs:
+        100
+
+    Elitism:
+        1
+
+    Mutation rate:
+        0.02
+
+    Crossover rate:
+        0.8
+
+======================================================================
+5. NUMBER OF DOCKING RUNS
+======================================================================
+
+5.1 Perform:
+    100 independent AutoDock4.2 GA-LS runs
+    for each ligand-protein system.
+
+5.2 Each run independently samples ligand position, orientation, and
+    flexible torsional degrees of freedom.
+
+5.3 The 100 runs provide the docking solution ensemble used for
+    subsequent ranking and RMSD clustering.
+
+IMPORTANT:
+"100 runs" means 100 independent docking searches.
+
+This is different from:
+    Number of poses retained
+and different from:
+    Number of clusters obtained after RMSD clustering.
+
+======================================================================
+6. REDOCKING VALIDATION
+======================================================================
+
+Redocking validation is performed independently for EGFR and Src.
+
+----------------------------------------------------------------------
+6.1 EGFR / Erlotinib
+----------------------------------------------------------------------
+
+Protein:
+    EGFR, PDB 1M17
+
+Reference ligand:
+    Co-crystallized erlotinib
+
+Grid:
+    45 × 45 × 40 points
+
+Spacing:
+    0.375 Å
+
+Grid center:
+    (21.950, 0.318, 52.002) Å
+
+Search:
+    LGA
+
+Population:
+    150
+
+Energy evaluations:
+    2,500,000
+
+Generations:
+    27,000
+
+Independent runs:
+    100
+
+Clustering RMSD tolerance:
+    2.0 Å
+
+Observed AutoDock4.2 redocking RMSD:
+    1.83 Å
+
+----------------------------------------------------------------------
+6.2 Src / Bosutinib
+----------------------------------------------------------------------
+
+Protein:
+    Src, PDB 4MXO
+
+Reference ligand:
+    Co-crystallized bosutinib
+
+Grid:
+    60 × 40 × 50 points
+
+Spacing:
+    0.375 Å
+
+Grid center:
+    (12.846, -40.993, -3.653) Å
+
+Search:
+    LGA
+
+Population:
+    150
+
+Energy evaluations:
+    2,500,000
+
+Generations:
+    27,000
+
+Independent runs:
+    100
+
+Clustering RMSD tolerance:
+    2.0 Å
+
+Observed AutoDock4.2 redocking RMSD:
+    1.26 Å
+
+======================================================================
+END OF WORK INSTRUCTION
+======================================================================
